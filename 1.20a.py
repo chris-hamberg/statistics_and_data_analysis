@@ -3,7 +3,7 @@ from plot_tools.dotplot import dotplot
 font     = 'Serif'
 title    = '2008 Movie Ticket Sales (in dollars)'
 source   = 'Source: Box Office Mojo (www.boxofficemojo.com)'
-filename = '1.20.jpg'
+filename = '1.20a.jpg'
 
 data = {'1'  :9, 
         '1.5':5, 
