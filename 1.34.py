@@ -6,33 +6,34 @@ import pathlib
 
 #NOTE Plot Info Configuration
 font     = 'Serif'
-title    = 'Adult Literacy'
-source   = ('Source: The U.S. Department of Education'
-            ' (2003 National Assessment of Adult Literacy)')
-ylabel   = 'Percentage of U.S. Adults'
+title    = 'Is Plagarism a Significant Problem'
+source   = ('Source: "Techincal Review of Plagarism Software" '
+            '(University of Luton)')
+ylabel   = 'Faculty Responses'
 filename = pathlib.Path(__file__).with_suffix('.jpg')
 
 
 #NOTE Data Configuration
-data       = [14, 29, 44, 13]
-categories = ['Below Basic', 'Basic', 'Above Basic', 'Proficient']
+data       = [5, 48, 90, 140, 39]
+categories = ['Strongly Disagree', 'Disagree', 'Not Sure', 'Agree', 
+        'Strongly Agree']
 positions  = np.arange(len(categories))
 
 
 # NOTE Color Configuration
-background = 'white'
-spines     = 'white'
-special    = 'red' # Bottom and left spines
+background = '#111111'
+spines     = '#222222'
+special    = spines # Bottom and left spines
 # --- text colors
-bold       = 'black'
-trim       = 'black'
+bold       = 'white'
+trim       = '#777777'
 # --- bar colors
-bars       = background
-edges      = 'red'
-width      = 6
+bars       = 'teal'
+edges      = 'teal'
+width      = 1
 # --- grid colors
-grid       = 'white'
-alpha      = 0.1
+grid       = '#111111'
+alpha      = 0.0
 
 
 #NOTE Geometry Configuration
@@ -50,7 +51,7 @@ plt.bar(positions, data, align='center', color=bars,
 plt.xticks(positions, categories, fontsize=10, fontname=font, 
         rotation=x_rotation, color=bold)
 plt.ylabel(ylabel, fontsize=10, fontname=font, 
-        color='red')
+        color=bold)
 plt.yticks(color=trim)
 plt.suptitle(title, fontsize=14, fontname=font, color=bold)
 #plt.title(source, fontsize=8, fontname=font, color=trim)
@@ -63,9 +64,9 @@ ax = plt.axes()
 ax.patch.set_facecolor(background)
 ax.figure.set_facecolor(background)
 ax.set_axisbelow(True)
-for position in ['top', 'right', 'left']:
+for position in ['top', 'right']:
     ax.spines[position].set_color(spines)
-for position in ['bottom']:
+for position in ['bottom', 'left']:
     ax.spines[position].set_color(special)
 ax.tick_params(top=False, bottom=False, left=y_ticks, right=x_ticks, 
         labelleft=True, labelbottom=True)
