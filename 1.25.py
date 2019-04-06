@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pathlib
 
+
 font   = 'Serif'
 title  = ('Percentage of Wireless Phone Only Households \n(with no landline)')
 source = 'Source: Going Wireless (AARP Bulletin, June 2009)'
