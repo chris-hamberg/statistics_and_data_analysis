@@ -6,7 +6,7 @@ import pathlib
 
 #NOTE Plot Info Configuration
 font     = 'Serif'
-title    = 'Word Count Simple Random Sample'
+title    = 'Word Count Stratified Sample'
 source   = 'Source: Proprietary'
 filename = pathlib.Path(__file__)
 xlabel   = 'Word Count'
@@ -19,23 +19,23 @@ df = pd.read_csv(filename.with_suffix('.csv'))
 x_col = 'count'
 y_col = 'pages'
 x_len = 8
-y_len = 5
+y_len = 6
 
 
 #NOTE Color Configuration
-background = 'black'
-spines     = 'black'
+background = 'darkgrey'
+spines     = 'darkgrey'
 special    = spines # Bottom and left edges
 # --- Text Colors
-bold       = 'darkgrey'
-trim       = 'grey'
+bold       = 'black'
+trim       = 'white'
 # --- Grid Colors
-grid       = 'black'
+grid       = 'darkgrey'
 alpha      = 0.0
 # --- Dotplot Colors
-dcolor     = 'cyan'   # dot color
+dcolor     = 'red'   # dot color
 dsize      = 10      # dot size
-ecolor     = 'cyan' # border color
+ecolor     = 'red' # border color
 ewidth     = 1       # border width
 
 
@@ -69,7 +69,7 @@ def xlabels(skip=0):
 plt = dotplot(df[x_col], df[y_col], dcolor, dsize, ecolor, ewidth)
 locs, labels = plt.xticks()
 plt.xticks(locs,
-        ['', '100', '200', '300', '400', '500', '600', '700', '800'],
+        ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
         fontname=font,
         color=trim, rotation=x_rotation)
 plt.yticks(list(range(y_len)), list(range(1, y_len+1)), 
