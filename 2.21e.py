@@ -72,7 +72,7 @@ plt.xticks(locs,
         [None, '100', '200', '300', '400', '500', '600', '700', '800'],
         fontname=font,
         color=trim, rotation=x_rotation)
-plt.yticks(list(range(y_len)), labels=list(range(1, y_len+1)), 
+plt.yticks(list(range(y_len)), list(range(1, y_len+1)), 
         fontname=font, color=trim)
 plt.suptitle(title, fontsize=15, fontname=font, color=bold)
 plt.title(source, fontsize=8, fontname=font, color=trim)
@@ -94,6 +94,6 @@ ax.tick_params(top=False, bottom=x_ticks, left=y_ticks, right=False,
         labelleft=True, labelbottom=True)
 
 
-plt.savefig(filename.with_suffix('.jpg'), 
-        facecolor=plt.axes().figure.get_facecolor())
+#plt.savefig(filename.with_suffix('.jpg'), 
+#        facecolor=plt.axes().figure.get_facecolor())
 plt.show()
