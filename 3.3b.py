@@ -7,7 +7,7 @@ import pathlib
 font     = 'Serif'
 title    = 'Cell Phone Usage at Work'
 source   = 'Source: "Whistle - But Don\'t Tweet - While You Work," www.roberthalftechnology.com, October 6, 2009'
-ylabel   = 'Percentage'
+ylabel   = 'Cumulative Percentage'
 filename = pathlib.Path(__file__).with_suffix('.jpg')
 
 

@@ -5,25 +5,24 @@ import pathlib
 
 #NOTE Plot Info Configuration
 font     = 'Serif'
-title    = 'College Students Who Would Like to Get All Textbooks\nin Digital Form'
-source   = 'Source: The Chronicle of Higher Education, August 23, 2013'
+title    = 'How Often Adults Swear in Conversations'
+source   = 'Source: "Rinse Out Your Mouth" (Associated Press, March 29, 2006)'
 ylabel   = 'Cumulative Percentage'
 filename = pathlib.Path(__file__).with_suffix('.jpg')
 
 
 #NOTE Data Configuration
-data       = [21.3, 29.2, 25.0, 13.2, 11.3]
-legend     = ['Strongly Disagree', 'Disagree', 'Agree', 'Strongly Agree', 
-        'Don\'t Know/No response']
+data       = [46, 32, 21]
+legend     = ['Weekly', 'Monthly', 'Never']
 
 
 # NOTE Color Configuration
-background = '#EEEEEE'
-spines     = '#EEEEEE'
+background = '#CCDCDD'
+spines     = background
 special    = spines # Bottom and left spines
 # --- text colors
-bold       = 'black'
-trim       = '#444444'
+bold       = '#112122'
+trim       = '#778788'
 # --- bar colors
 bars       = 'red'
 edges      = 'black'
@@ -46,8 +45,9 @@ plt.gcf().set_size_inches(x_size, y_size)
 
 
 bottom = []
-for datum, color in zip(data, ['#003322', '#117766', '#228888', '#33BBCC', '#55EEFF']):
-    plt.bar(0, np.array([datum]), bottom=sum(bottom), color=color, linewidth=width)
+for datum, color in zip(data, ['skyblue', 'royalblue', 'cyan']):
+    plt.bar(0, np.array([datum]), bottom=sum(bottom), color=color, 
+            linewidth=width, alpha=0.66)
     bottom.append(np.array([datum]))
 
 
@@ -55,8 +55,7 @@ plt.xticks([], [])
 plt.ylabel(ylabel, fontsize=10, fontname=font, color=bold)
 plt.yticks(color=trim)
 plt.suptitle(title, wrap=True, fontsize=14, fontname=font, color=bold)
-plt.figtext(.5, 0.01, source, wrap=True, ha='center', fontname=font, fontsize=8,
-        color=trim)
+plt.title(source, wrap=True, fontname=font, fontsize=8, color=bold)
 plt.grid(color=grid, alpha=alpha)
 plt.legend(legend)
 
